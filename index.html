@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo List</title>
+    <link rel="stylesheet" href="css/css-code.css">
+  </head>
+  <body>
+    <p>Todo List</p>
+
+    <div class="todo-input-grid">
+      <input placeholder="Todo name"
+        class="js-name-input">
+      <input type="date"
+        class="due-date-input">
+      <button onclick="
+        addTodo();
+      " class="add-todo-button">Add</button>
+      <button onclick="
+      deleteAll();
+      " class="js-delete-all">Delete All</button>
+    </div>
+
+    <div class = "js-todo-grid">
+    </div>
+
+    <script src="javascript/javascript-code.js"></script>
+  </body>
+</html>

@@ -1,0 +1,216 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  color: white;
+
+  background-image: url("../pictures/background.webp"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+/* Title */
+body > p {
+  font-size: 42px;
+  font-weight: bold;
+  margin: 0 0 35px;
+  letter-spacing: 1px;
+}
+
+/* Input section */
+.todo-input-grid {
+  display: grid;
+  grid-template-columns: 280px 170px 100px 120px;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+/* Inputs */
+.todo-input-grid input {
+  height: 45px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  background: white;
+  color: #222;
+  transition: 0.2s;
+}
+
+.todo-input-grid input:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+
+/* General button styling */
+.todo-input-grid button {
+  height: 45px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Add button */
+.add-todo-button {
+  background: #00c853;
+  color: white;
+}
+
+.add-todo-button:hover {
+  background: #00a844;
+  transform: translateY(-2px);
+}
+
+.add-todo-button:active {
+  transform: translateY(0);
+}
+
+/* Delete All */
+.js-delete-all {
+  background: #ff5252;
+  color: white;
+}
+
+.js-delete-all:hover {
+  background: #e53935;
+  transform: translateY(-2px);
+}
+
+.js-delete-all:active {
+  transform: translateY(0);
+}
+
+/* Todo list */
+.js-todo-grid {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: transparent;
+}
+
+.todo-row {
+  display: grid;
+  grid-template-columns: 1fr 170px 100px;
+
+  min-height: 55px;
+  align-items: center;
+
+  padding: 0 18px;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+/* Each todo cell */
+.js-todo-grid > div,
+.todo-row button {
+  height: 35px;
+  border: none;
+  border-radius: 7px;
+
+  background: rgba(72, 72, 90, 0.239);
+  color: white;
+
+  cursor: pointer;
+}
+
+.todo-row button:hover {
+  background: rgba(31, 17, 238, 0.4);
+}
+
+/* Todo name */
+.js-todo-grid > div {
+  font-size: 15px;
+}
+
+/* Date */
+.js-todo-grid > div:nth-child(3n + 2) {
+  color: #b9c7d8;
+  font-size: 14px;
+}
+
+/* Remove button */
+.js-todo-grid > button {
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: #ff6b6b;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.js-todo-grid > button:hover {
+  background: rgba(255, 82, 82, 0.12);
+  color: #ff3838;
+}
+
+/* Remove bottom border from last row */
+.js-todo-grid > :nth-last-child(-n + 3) {
+  border-bottom: none;
+}
+
+/* Empty list message */
+.js-todo-grid:empty {
+  display: none;
+}
+
+/* Responsive design */
+@media (max-width: 750px) {
+  .todo-input-grid {
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .todo-input-grid input {
+    width: 100%;
+  }
+
+  .js-todo-grid {
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    padding: 40px 12px;
+  }
+
+  body > p {
+    font-size: 32px;
+  }
+
+  .todo-input-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .js-todo-grid {
+    grid-template-columns: 1fr 120px 80px;
+  }
+}
