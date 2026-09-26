@@ -1,6 +1,7 @@
 # Todo List 📝
 
 A simple and responsive Todo List web application built using **HTML, CSS, and JavaScript**.
+check this out here : https://himanshu-grow.github.io/To-do-List/
 
 ## Features
 
